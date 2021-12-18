@@ -59985,6 +59985,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5067142987969050862, guid: 866051e94024c364ab086013d8a96962, type: 3}
   m_PrefabInstance: {fileID: 94835862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &94835864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5067142987969050860, guid: 866051e94024c364ab086013d8a96962, type: 3}
+  m_PrefabInstance: {fileID: 94835862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &94835866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94835864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7de8d82d697085449e40d4894c1e4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  pushForce: 1
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!1001 &95313299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71334,6 +71369,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5067142987969050862, guid: 866051e94024c364ab086013d8a96962, type: 3}
   m_PrefabInstance: {fileID: 1061726415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1061726417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5067142987969050860, guid: 866051e94024c364ab086013d8a96962, type: 3}
+  m_PrefabInstance: {fileID: 1061726415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1061726419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061726417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7de8d82d697085449e40d4894c1e4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  pushForce: 1
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!1 &1062469138
 GameObject:
   m_ObjectHideFlags: 0
@@ -93922,6 +93992,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5067142987969050862, guid: 866051e94024c364ab086013d8a96962, type: 3}
   m_PrefabInstance: {fileID: 2038105117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2038105119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5067142987969050860, guid: 866051e94024c364ab086013d8a96962, type: 3}
+  m_PrefabInstance: {fileID: 2038105117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038105121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038105119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7de8d82d697085449e40d4894c1e4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  pushForce: 1
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!1001 &2043933193
 PrefabInstance:
   m_ObjectHideFlags: 0
