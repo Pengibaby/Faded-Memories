@@ -8,6 +8,7 @@ public abstract class Mover : Fighter
     protected BoxCollider2D boxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
+    private float previousDirection = 1f;
 
     protected virtual void Start()
     {
@@ -23,6 +24,37 @@ public abstract class Mover : Fighter
         if (moveDelta.x != 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)*Mathf.Sign(moveDelta.x), transform.localScale.y, transform.localScale.z);
+            //SPELL CIRCLE STUFF.
+            //Checks if the gameObject with this script attached is the player object. This is so that the offset of the spell circle can be changed.
+            if (gameObject.name == "Player")
+            {
+                //Checks to make sure the direction of the player changed.
+                if (Mathf.Sign(moveDelta.x) != previousDirection)
+                {
+                    //Gets the SpellCircle gameObject.
+                    GameObject spellCircle = GameObject.Find("SpellCircle");
+                    //Checks if the player is facing left.
+                    if (Mathf.Sign(moveDelta.x) == -1)
+                    {
+                        //Change the offset of the spell circle to be -180 degrees.
+                        if (spellCircle != null)
+                        {
+                            spellCircle.GetComponent<SpellCircle>().offset = -180;
+                        }
+                    }
+                    //If player is facing right.
+                    else
+                    {
+                        //Changes the offset of the spell circle back to 0 degrees.
+                        if (spellCircle != null)
+                        {
+                            spellCircle.GetComponent<SpellCircle>().offset = 0;
+                        }
+                    }
+                }
+                //Sets the previous direction of the player so that it can be used for comparison to check if the player has changed directions.
+                previousDirection = Mathf.Sign(moveDelta.x);
+            }
         }
 
         // Add push Vector if any 
