@@ -89625,6 +89625,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8869367105274646336, guid: dce8d4b5b83e63349949c4c64f86902a, type: 3}
   m_PrefabInstance: {fileID: 1659992129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659992132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4917895861781889705, guid: dce8d4b5b83e63349949c4c64f86902a, type: 3}
+  m_PrefabInstance: {fileID: 1659992129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d149a6aac4919aa4eb15a9c112cbe3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1661670914 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8608062377209543135, guid: 0b4d1eb18dd0b5c43b1000bcbda40240, type: 3}
@@ -92744,13 +92755,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 458511855}
     - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
+      propertyPath: mana
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
       propertyPath: speed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
+      propertyPath: maxMana
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
       propertyPath: hitpoint
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
+      propertyPath: manaBarUI
+      value: 
+      objectReference: {fileID: 1659992132}
     - target: {fileID: 7315662281536878006, guid: 0f917b4574b4e5240aff800d6197b9be, type: 3}
       propertyPath: healthBarUI
       value: 

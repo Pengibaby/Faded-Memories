@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Inventory playerInventory;       // Player's inventory
     public int goldAmount;      // Player's gold
     public int hitpoint;
+    public int mana;
 
     private void Awake()
     {
