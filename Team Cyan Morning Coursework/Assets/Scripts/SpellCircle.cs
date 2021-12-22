@@ -66,6 +66,8 @@ public class SpellCircle : MonoBehaviour
         player.GetComponent<Player>().speed = 2;
         //waits for seconds.
         yield return new WaitForSeconds(value);
+        //Plays the fire ball shooting sound.
+        GetComponent<AudioSource>().Play();
         //Spawn fireball at firePoint position (child object of SpellCircle), and at the current spell circle rotation (without the offset).
         Instantiate(fireBall, firePoint.position, Quaternion.Euler(0f, 0f, rotationZaxis));
         //Wait for 0.5 seconds and then disable the spell circle sprite.
