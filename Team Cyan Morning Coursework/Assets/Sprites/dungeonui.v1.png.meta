@@ -116,6 +116,18 @@ TextureImporter:
   - first:
       213: 6302396063483879058
     second: TextBox_BG
+  - first:
+      213: 2987040117693598790
+    second: Mana_Bar_1
+  - first:
+      213: 8890802078900009217
+    second: Mana_Bar_2
+  - first:
+      213: 1316796479444747051
+    second: Mana_Bar_3
+  - first:
+      213: -3766197892126585552
+    second: Mana_Bar_Block
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -990,7 +1002,7 @@ TextureImporter:
         width: 8
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -998,6 +1010,90 @@ TextureImporter:
       bones: []
       spriteID: 29ed6c504db967750800000000000000
       internalID: 6302396063483879058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Bar_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 267
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cc7f83929147920800000000000000
+      internalID: 2987040117693598790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Bar_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 267
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109b321a269726b70800000000000000
+      internalID: 8890802078900009217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Bar_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 267
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b230acedb63364210800000000000000
+      internalID: 1316796479444747051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Bar_Block
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 214
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d48f5a8f6cbbbc0800000000000000
+      internalID: -3766197892126585552
       vertices: []
       indices: 
       edges: []

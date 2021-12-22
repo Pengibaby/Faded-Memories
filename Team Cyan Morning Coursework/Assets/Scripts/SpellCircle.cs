@@ -37,10 +37,18 @@ public class SpellCircle : MonoBehaviour
             //If right mouse button is pressed, spawn fireball projectile.
             if (Input.GetMouseButtonDown(1))
             {
-                //Wait for 1 second before shooting the fireball.
-                waitBeforeDisableSprite = StartCoroutine(waitForSecondsEnable(1f));
-                //Reset the current cooldown time to be the initial cooldown time.
-                currentShotsCooldown = shotsCoolDownTime;
+                //Checks to make sure the player's mana is at least 2 before firing the spell.
+                if(player.GetComponent<Player>().mana >= 2)
+                {
+                    //Wait for 1 second before shooting the fireball.
+                    waitBeforeDisableSprite = StartCoroutine(waitForSecondsEnable(1f));
+                    //Reset the current cooldown time to be the initial cooldown time.
+                    currentShotsCooldown = shotsCoolDownTime;
+                    //Lower the current mana of the player by 2.
+                    player.GetComponent<Player>().mana = player.GetComponent<Player>().mana - 2;
+                    //Update the mana bar list.
+                    GameObject.Find("Mana_Bar_UI").GetComponent<Mana_Bar_UI>().GetList().ChangeMana(player.GetComponent<Player>().mana, player.GetComponent<Player>().maxMana);
+                }
             }
         }
         //If the current cooldown time is larger than 0.

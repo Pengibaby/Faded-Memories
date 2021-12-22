@@ -6,10 +6,15 @@ using UnityEngine;
 public class Player : Mover
 {
     public Inventory playerInventory;
-    private PlayerHealthList healthList;
+    private PlayerHealthList healthList; //health list of the player.
+    private PlayerManaList manaList; //mana list of th eplayer.
     [SerializeField] private Inventory_UI inventoryUi;
     [SerializeField] private Health_Bar_UI healthBarUI;
+    [SerializeField] private Mana_Bar_UI manaBarUI;
     public Animator animator;
+
+    public int mana; //Player's current mana.
+    public int maxMana; //player's max mana.
 
     private void Awake()
     {
@@ -24,7 +29,9 @@ public class Player : Mover
         }
         gameObject.GetComponent<GoldAmount>().goldAmount = GameManager.Instance.goldAmount;
         hitpoint = GameManager.Instance.hitpoint;
+        mana = GameManager.Instance.mana; //Loads the current mana from the GameManager.
         healthList = new PlayerHealthList();
+        manaList = new PlayerManaList(); //Initializes the manaList.
 
         // Testing: print list of items
         List<Loot> listOfItems = GameObject.Find("Player").GetComponent<Player>().playerInventory.GetListOfItems();
@@ -45,6 +52,13 @@ public class Player : Mover
             healthList.GetHealthList().Add(maxHitpoint);
             healthList.ChangeHealth(hitpoint, maxHitpoint);
             healthBarUI.SetHealthStats(healthList);
+        }
+        if (manaBarUI != null) {
+            //Sets the initial values of the current mana and max mana.
+            manaList.GetManaList().Add(mana);
+            manaList.GetManaList().Add(maxMana);
+            manaList.ChangeMana(mana, maxMana);
+            manaBarUI.SetManaStats(manaList);
         }
 
         //Disable the audio source at the beginning, so no sound plays.
@@ -89,5 +103,6 @@ public class Player : Mover
         GameManager.Instance.playerInventory = playerInventory;
         GameManager.Instance.goldAmount = gameObject.GetComponent<GoldAmount>().goldAmount;
         GameManager.Instance.hitpoint = hitpoint;
+        GameManager.Instance.mana = mana;
     }
 }

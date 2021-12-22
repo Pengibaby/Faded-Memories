@@ -32,6 +32,7 @@ public class FireBall : Collidable
         Destroy(gameObject);
     }
 
+	//A function that overrides the OnCollide function in Collidable. Will deal damage to the player and then destroy the fireball.
 	protected override void OnCollide(Collider2D coll)
 	{
 		if (coll.tag == "Fighter")
