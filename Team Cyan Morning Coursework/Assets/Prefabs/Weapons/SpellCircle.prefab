@@ -101,6 +101,7 @@ MonoBehaviour:
   shotsCoolDownTime: 1.5
   fireBall: {fileID: 4083313256360913832, guid: c1a4d33d5d276c14186af585e7e0ef72, type: 3}
   firePoint: {fileID: 6055204684986239690}
+  fireBallShootEffect: {fileID: 4228691560993575136, guid: ce61f8dd585162e488c751b5481ab9dc, type: 3}
   player: {fileID: 0}
 --- !u!82 &1437872780181224824
 AudioSource:

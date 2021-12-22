@@ -11,12 +11,13 @@ public class SpellCircle : MonoBehaviour
     //Cooldown time.
     public float shotsCoolDownTime;
 
-    public GameObject fireBall;
-    public Transform firePoint;
+    public GameObject fireBall; //Fire ball object.
+    public Transform firePoint; //The object that represents the point of the spell circle the fire ball will shoot out from.
+    public GameObject fireBallShootEffect; //The game object that is the shooting effect of the fire ball.
 
     private float rotationZaxis = 0f;
 
-    public GameObject player;
+    public GameObject player; //Player object.
 
     private Coroutine waitBeforeDisableSprite = null;
 
@@ -68,6 +69,10 @@ public class SpellCircle : MonoBehaviour
         yield return new WaitForSeconds(value);
         //Plays the fire ball shooting sound.
         GetComponent<AudioSource>().Play();
+        //Creates the shooting effect.
+        GameObject effect = Instantiate(fireBallShootEffect, firePoint.position, Quaternion.Euler(0f, 0f, rotationZaxis));
+        //Destroy this effect in 0.2 seconds.
+        Destroy(effect, 0.2f);
         //Spawn fireball at firePoint position (child object of SpellCircle), and at the current spell circle rotation (without the offset).
         Instantiate(fireBall, firePoint.position, Quaternion.Euler(0f, 0f, rotationZaxis));
         //Wait for 0.5 seconds and then disable the spell circle sprite.
