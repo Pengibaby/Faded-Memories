@@ -13,11 +13,10 @@ public class Loot
     public Item.ItemType lootType;
     //Amount picked up.
     public int lootAmount;
-    //Loot ID.
-    public int id;
 
     //Item effect.
     private int healingAmount;
+    private int manaAmount;
 
     //A function that returns the sprite of the loot.
     public Sprite GetSprite() {
@@ -31,6 +30,8 @@ public class Loot
                 return false;
             case Item.ItemType.Apple:
             case Item.ItemType.Berry:
+            case Item.ItemType.ManaPotion1:
+            case Item.ItemType.ManaPotion2:
                 return true;
         }
     }
@@ -47,25 +48,30 @@ public class Loot
             case Item.ItemType.Berry:
                 healingAmount = 2;
                 return healingAmount;
+            case Item.ItemType.ManaPotion1:
+            case Item.ItemType.ManaPotion2:
+                healingAmount = 0;
+                return healingAmount;
         }
     }
 
-    //Temp function. Might need. If not needed, can delete.
-    //Temp function. Might need. If not needed, can delete.
-    //Temp function. Might need. If not needed, can delete.
-    public int GetItemID()
+    public int GetManaAmount()
     {
         switch (lootType)
         {
             default:
-                id = 0;
-                return id;
+                manaAmount = 0;
+                return manaAmount;
             case Item.ItemType.Apple:
-                id = 10;
-                return id;
             case Item.ItemType.Berry:
-                id = 20;
-                return id;
+                manaAmount = 0;
+                return manaAmount;
+            case Item.ItemType.ManaPotion1:
+                manaAmount = 1;
+                return manaAmount;
+            case Item.ItemType.ManaPotion2:
+                manaAmount = 2;
+                return manaAmount;
         }
     }
 }

@@ -12,7 +12,9 @@ public class Item : Collectable
     //Enumeration of item types. Can add more, as long as these items are meant to despawn when the player picks it up. i.e. so not chests.
     public enum ItemType { 
         Apple,
-        Berry
+        Berry,
+        ManaPotion1,
+        ManaPotion2
     }
     //Can set the itemtype and amount in the unity editor.
     public ItemType itemType;
