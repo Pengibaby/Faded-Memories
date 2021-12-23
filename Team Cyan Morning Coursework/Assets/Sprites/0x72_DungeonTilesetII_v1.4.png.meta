@@ -191,6 +191,12 @@ TextureImporter:
   - first:
       213: -1238997915796689107
     second: 0x72_DungeonTilesetII_v1.4_62
+  - first:
+      213: -1821350270713564672
+    second: Mana_Portion_1
+  - first:
+      213: 4778010708280917310
+    second: Mana_Portion_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1602,7 +1608,7 @@ TextureImporter:
         width: 13
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1610,6 +1616,48 @@ TextureImporter:
       bones: []
       spriteID: d2f2d77c5f13ecee0800000000000000
       internalID: -1238997915796689107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Portion_1
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 273
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0027e86249349b6e0800000000000000
+      internalID: -1821350270713564672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana_Portion_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 273
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3db8189c67ee4240800000000000000
+      internalID: 4778010708280917310
       vertices: []
       indices: 
       edges: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 465691093260222099}
   - component: {fileID: 465691093260222098}
   - component: {fileID: 7518296846795852941}
-  - component: {fileID: 6107424716396446922}
+  - component: {fileID: 5925717801846124715}
   m_Layer: 0
   m_Name: Chest_Red_Right_2
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22821641, y: 0.25921762}
   m_EdgeRadius: 0
---- !u!114 &6107424716396446922
+--- !u!114 &5925717801846124715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 465691093260222100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e281888a8ca558a41aa42ff2a3405d83, type: 3}
+  m_Script: {fileID: 11500000, guid: a1f2c3bd80d98c4489e0b33905918ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter2D:
@@ -136,5 +136,5 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  goldAmount: 1800
-  emptyChestSprite: {fileID: -502570662205544945, guid: e2981759e7efbf0469150dcdd81b9520, type: 3}
+  item: {fileID: 7084711915196759831, guid: a1b62f53f4140604bac245f22cd56b20, type: 3}
+  emptyItemChestSprite: {fileID: -502570662205544945, guid: e2981759e7efbf0469150dcdd81b9520, type: 3}

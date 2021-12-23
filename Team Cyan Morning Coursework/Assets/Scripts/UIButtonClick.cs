@@ -93,7 +93,8 @@ public class UIButtonClick : MonoBehaviour
         {
             int heal = item.GetHealingAmount(); //gets the heal amount based on the item type.
             //Only uses the item to heal the player if the player's current hp is less than the max hp.
-            if (GameObject.Find("Player").GetComponent<Player>().hitpoint < GameObject.Find("Player").GetComponent<Player>().maxHitpoint) {
+            if (GameObject.Find("Player").GetComponent<Player>().hitpoint < GameObject.Find("Player").GetComponent<Player>().maxHitpoint)
+            {
                 GameObject.Find("Player").GetComponent<Player>().hitpoint += heal;
                 //if the resulting hp is larger than the max hp, set the hp to be the max hp.
                 if (GameObject.Find("Player").GetComponent<Player>().hitpoint > GameObject.Find("Player").GetComponent<Player>().maxHitpoint)
@@ -102,6 +103,24 @@ public class UIButtonClick : MonoBehaviour
                 }
                 //Finds the Health_Bar_UI object in the UI canvas, and then finds the script attached to it to get the health list, and add the updated values to the list.
                 GameObject.Find("Health_Bar_UI").GetComponent<Health_Bar_UI>().GetList().ChangeHealth(GameObject.Find("Player").GetComponent<Player>().hitpoint, GameObject.Find("Player").GetComponent<Player>().maxHitpoint);
+                usedsuccessfully = true;
+            }
+        }
+        //If the item type is mana potion, then restore player mana.
+        else if (item.lootType == Item.ItemType.ManaPotion1 || item.lootType == Item.ItemType.ManaPotion2)
+        {
+            int mana = item.GetManaAmount(); //gets the heal amount based on the item type.
+            //Only uses the item to heal the player if the player's current hp is less than the max hp.
+            if (GameObject.Find("Player").GetComponent<Player>().mana < GameObject.Find("Player").GetComponent<Player>().maxMana)
+            {
+                GameObject.Find("Player").GetComponent<Player>().mana += mana;
+                //if the resulting hp is larger than the max hp, set the hp to be the max hp.
+                if (GameObject.Find("Player").GetComponent<Player>().mana > GameObject.Find("Player").GetComponent<Player>().maxMana)
+                {
+                    GameObject.Find("Player").GetComponent<Player>().mana = GameObject.Find("Player").GetComponent<Player>().maxMana;
+                }
+                //Finds the Health_Bar_UI object in the UI canvas, and then finds the script attached to it to get the health list, and add the updated values to the list.
+                GameObject.Find("Mana_Bar_UI").GetComponent<Mana_Bar_UI>().GetList().ChangeMana(GameObject.Find("Player").GetComponent<Player>().mana, GameObject.Find("Player").GetComponent<Player>().maxMana);
                 usedsuccessfully = true;
             }
         }
