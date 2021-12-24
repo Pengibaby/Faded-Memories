@@ -112,7 +112,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   speed: 2
   timeBeforeDespawn: 1
-  damagePoint: 2
+  damagePoint: 3
   pushForce: 2
 --- !u!61 &4812320523976928253
 BoxCollider2D:
