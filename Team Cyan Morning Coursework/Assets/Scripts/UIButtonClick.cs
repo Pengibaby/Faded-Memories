@@ -135,6 +135,9 @@ public class UIButtonClick : MonoBehaviour
             playerWeapon.GetComponent<Weapon>().pushForce = item.push;
             playerWeapon.GetComponent<BoxCollider2D>().offset = item.colliderOffset;
             playerWeapon.GetComponent<BoxCollider2D>().size = item.colliderSize;
+            //Stores the current weapon as the currentWeapon variable in Player.cs, so that it can be stored in the GameManager.
+            GameObject.Find("Player").GetComponent<Player>().currentWeapon = new Loot { sprite = item.sprite, lootType = Item.ItemType.Weapons, lootAmount = 1, dmg = item.dmg, push = item.push, colliderOffset = item.colliderOffset, colliderSize = item.colliderSize };
+
             usedsuccessfully = true;
         }
 
