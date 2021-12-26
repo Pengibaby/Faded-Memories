@@ -21,8 +21,20 @@ public class ChestItem : Collectable
                 System.Random rnd = new System.Random();
                 item.amount = rnd.Next(1, 4);
             }
-            //Creates a loot object that stores the information of itemSprite, itemType and amount.
-            Loot tempLoot = new Loot { sprite = itemSprite, lootType = item.itemType, lootAmount = item.amount };
+
+            Loot tempLoot;
+            //If item is not of type weapon.
+            if (item.itemType != Item.ItemType.Weapons)
+            {
+                //Creates a loot object that stores the information of itemSprite, itemType and amount.
+                tempLoot = new Loot { sprite = itemSprite, lootType = item.itemType, lootAmount = item.amount };
+            }
+            //If item is a weapon.
+            else
+            {
+                //Creates a loot object that stores the information of itemSprite, itemType and amount.
+                tempLoot = new Loot { sprite = itemSprite, lootType = item.itemType, lootAmount = item.amount, dmg = item.weaponDmg, push = item.pushforce, colliderOffset = item.boxColliderOffset, colliderSize = item.boxColliderSize };
+            }
 
             bool addSuccessful = GameObject.Find("Player").GetComponent<Player>().playerInventory.AddItem(tempLoot);
             //Destroys the loot object. (removes it from the chest.)

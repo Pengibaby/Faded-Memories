@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Weapon : Collidable
 {
@@ -30,8 +31,8 @@ public class Weapon : Collidable
 	{
 		base.Update();
 
-		//Only attack if left click is pressed.
-		if (Input.GetMouseButtonDown(0))
+		//Only attack if left click is pressed and if the mouse is not over the UI.
+		if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
 		{
 			//If the current orientation is up, then attack up.
 			if (playerOrientation.y > 0)
@@ -57,7 +58,9 @@ public class Weapon : Collidable
 			}
 		}
 
-		if (Input.GetMouseButtonUp(0)){
+		//If the mouse button is released and if the mouse is not over the UI.
+		if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
+		{
 			lastSwing = Time.time;
 			Swing();
 			//Plays the audio for sword swing.

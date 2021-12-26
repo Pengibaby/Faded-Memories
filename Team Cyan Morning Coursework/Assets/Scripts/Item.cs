@@ -14,11 +14,22 @@ public class Item : Collectable
         Apple,
         Berry,
         ManaPotion1,
-        ManaPotion2
+        ManaPotion2,
+        Weapons
     }
     //Can set the itemtype and amount in the unity editor.
     public ItemType itemType;
     public int amount;
+
+    //Weapon only info.
+    [HideInInspector]
+    public int weaponDmg;
+    [HideInInspector]
+    public float pushforce;
+    [HideInInspector]
+    public Vector2 boxColliderOffset;
+    [HideInInspector]
+    public Vector2 boxColliderSize;
 
     //Overrides the OnCollect function from Collectables class.
     protected override void OnCollect() {
@@ -28,8 +39,24 @@ public class Item : Collectable
             base.OnCollect();
             //Gets the sprite of the current item.
             itemSprite = this.GetComponent<SpriteRenderer>().sprite;
-            //Creates a loot object that stores the information of itemSprite, itemType and amount.
-            Loot tempLoot = new Loot { sprite = itemSprite, lootType = itemType, lootAmount = amount };
+            Loot tempLoot;
+            //If not weapon, but an item, either healing item or mana item.
+            if (this.GetComponent<Weapon>() == null)
+            {
+                //Creates a loot object that stores the information of itemSprite, itemType and amount.
+                tempLoot = new Loot { sprite = itemSprite, lootType = itemType, lootAmount = amount };
+            }
+            //If item is weapon.
+            else
+            {
+                //Get weapon info from the item colliding with the player.
+                weaponDmg = this.GetComponent<Weapon>().damagePoint;
+                pushforce = this.GetComponent<Weapon>().pushForce;
+                boxColliderOffset = this.GetComponent<BoxCollider2D>().offset;
+                boxColliderSize = this.GetComponent<BoxCollider2D>().size;
+                //Creates a loot object that stores the information of itemSprite, itemType, amount, dmg, push force, collider offset and collider size.
+                tempLoot = new Loot { sprite = itemSprite, lootType = itemType, lootAmount = amount, dmg = weaponDmg, push = pushforce, colliderOffset = boxColliderOffset, colliderSize = boxColliderSize};
+            }
             //Adds the loot to the player inventory. And stores a bool to check if add is sucessful.
             bool addSuccessful = GameObject.Find("Player").GetComponent<Player>().playerInventory.AddItem(tempLoot);
             //Destroys the game object. (removes it from the map.)

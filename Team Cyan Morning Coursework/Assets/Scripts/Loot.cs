@@ -18,6 +18,12 @@ public class Loot
     private int healingAmount;
     private int manaAmount;
 
+    //Weapon loot.
+    public int dmg;
+    public float push;
+    public Vector2 colliderOffset;
+    public Vector2 colliderSize;
+
     //A function that returns the sprite of the loot.
     public Sprite GetSprite() {
         return sprite;
@@ -33,6 +39,8 @@ public class Loot
             case Item.ItemType.ManaPotion1:
             case Item.ItemType.ManaPotion2:
                 return true;
+            case Item.ItemType.Weapons:
+                return false;
         }
     }
 
@@ -50,6 +58,7 @@ public class Loot
                 return healingAmount;
             case Item.ItemType.ManaPotion1:
             case Item.ItemType.ManaPotion2:
+            case Item.ItemType.Weapons:
                 healingAmount = 0;
                 return healingAmount;
         }
@@ -64,6 +73,7 @@ public class Loot
                 return manaAmount;
             case Item.ItemType.Apple:
             case Item.ItemType.Berry:
+            case Item.ItemType.Weapons:
                 manaAmount = 0;
                 return manaAmount;
             case Item.ItemType.ManaPotion1:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SpellCircle : MonoBehaviour
 {
@@ -34,8 +35,8 @@ public class SpellCircle : MonoBehaviour
         //If the current cooldown time is 0 or less, then allow fireball to be shot out.
         if (currentShotsCooldown <= 0)
         {
-            //If right mouse button is pressed, spawn fireball projectile.
-            if (Input.GetMouseButtonDown(1))
+            //If right mouse button is pressed and the mouse is not over the UI, spawn fireball projectile.
+            if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
             {
                 //Checks to make sure the player's mana is at least 2 before firing the spell.
                 if(player.GetComponent<Player>().mana >= 2)
