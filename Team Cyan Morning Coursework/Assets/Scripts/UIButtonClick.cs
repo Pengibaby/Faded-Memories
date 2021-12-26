@@ -124,6 +124,19 @@ public class UIButtonClick : MonoBehaviour
                 usedsuccessfully = true;
             }
         }
+        //If the item type is a weapon, equip this weapon.
+        else 
+        {
+            //Find the player knife object.
+            GameObject playerWeapon = GameObject.Find("Player_Knife");
+            //Set the stats and other info of the weapon to be the one from the inventory.
+            playerWeapon.GetComponent<SpriteRenderer>().sprite = item.sprite;
+            playerWeapon.GetComponent<Weapon>().damagePoint = item.dmg;
+            playerWeapon.GetComponent<Weapon>().pushForce = item.push;
+            playerWeapon.GetComponent<BoxCollider2D>().offset = item.colliderOffset;
+            playerWeapon.GetComponent<BoxCollider2D>().size = item.colliderSize;
+            usedsuccessfully = true;
+        }
 
         return usedsuccessfully;
     }

@@ -81,11 +81,12 @@ public class Inventory
     public Loot RemoveItem(int index) {
         //Sets the return value to be null.
         Loot temp = null;
+        Loot temptemp = null;
         //Make sure the index is less than 6, since max inventory space is 6.
         if (index < 6) {
             //Set temp to be the item to be removed.
             temp = listOfItems[index];
-            //Check if the item is stackable.
+            //Check if the item is stackable. i.e. it is not a weapon.
             if (listOfItems[index].IsStackable())
             {
                 //Check if the stackable item has count of 2 or more.
@@ -100,10 +101,21 @@ public class Inventory
                     listOfItems.RemoveAt(index);
                 }
             }
-            //If the item is not stackable, just remove it.
+            //if it is not stackable, i.e. a weapon, do the following.
             else 
             {
-                listOfItems.RemoveAt(index);
+                //Find the current player equip weapon.
+                GameObject playerWeapon = GameObject.Find("Player_Knife");
+                //Saves the current weapon from the inventory in a new loot item.
+                temptemp = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
+                //Set the weapon item in the inventory to be the player equiped weapon info.
+                listOfItems[index].sprite = playerWeapon.GetComponent<SpriteRenderer>().sprite;
+                listOfItems[index].lootType = Item.ItemType.Weapons;
+                listOfItems[index].lootAmount = 1;
+                listOfItems[index].dmg = playerWeapon.GetComponent<Weapon>().damagePoint;
+                listOfItems[index].push = playerWeapon.GetComponent<Weapon>().pushForce;
+                listOfItems[index].colliderOffset = playerWeapon.GetComponent<BoxCollider2D>().offset;
+                listOfItems[index].colliderSize = playerWeapon.GetComponent<BoxCollider2D>().size;
             }
         }
 
@@ -117,7 +129,17 @@ public class Inventory
         }
 
         //Avoid altering the removed object by direct reference.
-        Loot duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount };
+        Loot duplicateItem;
+        //If the loot is not a weapon
+        if (temp.lootType != Item.ItemType.Weapons)
+        {
+            duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount };
+        }
+        //If loot is a weapon.
+        else
+        {
+            duplicateItem = temptemp;
+        }
         //Returns the removed item (duplicated from the actual removed item.
         return duplicateItem;
     }

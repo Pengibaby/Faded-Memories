@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6370148009889479504}
   - component: {fileID: 4908673179169507072}
   - component: {fileID: 2925475149378587486}
+  - component: {fileID: 1310788416748700732}
   m_Layer: 0
   m_Name: Medium_Sword_Loot
   m_TagString: Untagged
@@ -92,7 +93,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6155257768379424810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -118,7 +119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6155257768379424810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6daac90e33bd0224aa0a527249e6568f, type: 3}
   m_Name: 
@@ -160,3 +161,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1310788416748700732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155257768379424810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9855b2519896fbf409da2dfaf7d852e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  itemType: 4
+  amount: 1
+  weaponDmg: 0
+  pushforce: 0
+  boxColliderOffset: {x: 0, y: 0}
+  boxColliderSize: {x: 0, y: 0}
