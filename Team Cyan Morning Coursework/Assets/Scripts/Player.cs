@@ -16,6 +16,9 @@ public class Player : Mover
     public int mana; //Player's current mana.
     public int maxMana; //player's max mana.
 
+    [HideInInspector]
+    public Loot currentWeapon;
+
     private void Awake()
     {
         // Load the player resources
@@ -61,6 +64,22 @@ public class Player : Mover
             manaBarUI.SetManaStats(manaList);
         }
 
+        //Load the player's current weapon.
+        if (GameObject.Find("Player_Knife") != null) {
+            //Find the player knife object.
+            GameObject playerWeapon = GameObject.Find("Player_Knife");
+            //If the GameManager currentWeapon instance is not null
+            if(GameManager.Instance.currentWeapon != null)
+            {
+                //Set the stats and other info of the weapon to be the one from the inventory.
+                playerWeapon.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.currentWeapon.sprite;
+                playerWeapon.GetComponent<Weapon>().damagePoint = GameManager.Instance.currentWeapon.dmg;
+                playerWeapon.GetComponent<Weapon>().pushForce = GameManager.Instance.currentWeapon.push;
+                playerWeapon.GetComponent<BoxCollider2D>().offset = GameManager.Instance.currentWeapon.colliderOffset;
+                playerWeapon.GetComponent<BoxCollider2D>().size = GameManager.Instance.currentWeapon.colliderSize;
+            }
+        }
+
         //Disable the audio source at the beginning, so no sound plays.
         GetComponent<AudioSource>().enabled = false;
     }
@@ -104,5 +123,6 @@ public class Player : Mover
         GameManager.Instance.goldAmount = gameObject.GetComponent<GoldAmount>().goldAmount;
         GameManager.Instance.hitpoint = hitpoint;
         GameManager.Instance.mana = mana;
+        GameManager.Instance.currentWeapon = currentWeapon;
     }
 }
