@@ -92,6 +92,13 @@ public class RightClickUIButton : MonoBehaviour, IPointerClickHandler
             Vector3 direction = direction = Random.insideUnitCircle.normalized;
             //Instantiate the GameObject.
             GameObject lootDrop = Instantiate(listOfPrefabs[prefabIndex], GameObject.Find("Player").transform.position + direction * 0.2f, Quaternion.identity);
+            lootDrop.AddComponent<Rigidbody2D>();
+            lootDrop.GetComponent<Rigidbody2D>().AddForce(direction * 0.25f, ForceMode2D.Impulse);
+            lootDrop.GetComponent<Rigidbody2D>().drag = 1;
+            lootDrop.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+            Destroy(lootDrop.GetComponent<Rigidbody2D>(), 0.5f);
+
             //Set the amount to be the amount dropped.
             lootDrop.GetComponent<Item>().amount = item.lootAmount;
             //Item dropped successfully.
