@@ -112,6 +112,10 @@ MonoBehaviour:
     maxNormalAngle: 0
   itemType: 1
   amount: 1
+  weaponDmg: 0
+  pushforce: 0
+  boxColliderOffset: {x: 0, y: 0}
+  boxColliderSize: {x: 0, y: 0}
 --- !u!61 &8382206345044914534
 BoxCollider2D:
   m_ObjectHideFlags: 0

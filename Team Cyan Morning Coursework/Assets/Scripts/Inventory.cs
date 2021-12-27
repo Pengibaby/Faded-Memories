@@ -144,6 +144,46 @@ public class Inventory
         return duplicateItem;
     }
 
+    //Funtion to drop all of the right clicked item from the inventory.
+    public Loot DropItem(int index)
+    {
+        //Sets the return value to be null.
+        Loot temp = null;
+        //Make sure the index is less than 6, since max inventory space is 6.
+        if (index < 6)
+        {
+            //Set temp to be the item to be dropped.
+            temp = listOfItems[index];
+
+            //Completely drops the item from the inventory.
+            listOfItems.RemoveAt(index);
+        }
+
+        //triggers the event. Which calls the function in Inventory_UI that refreshes the inventory UI.
+        OnItemListChange?.Invoke(this, EventArgs.Empty);
+
+        //Temp: Prints out the inventory list to console.
+        for (int i = 0; i < listOfItems.Count; i++)
+        {
+            Debug.Log(listOfItems[i].lootType + ", " + listOfItems[i].lootAmount);
+        }
+
+        //Avoid altering the dropped object by direct reference.
+        Loot duplicateItem;
+        //If the loot is not a weapon
+        if (temp.lootType != Item.ItemType.Weapons)
+        {
+            duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount };
+        }
+        //If loot is a weapon.
+        else
+        {
+            duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
+        }
+        //Returns the dropped item (duplicated from the actual removed item.
+        return duplicateItem;
+    }
+
     public List<Loot> GetListOfItems() {
         return listOfItems;
     }
