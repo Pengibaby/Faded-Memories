@@ -89,7 +89,7 @@ public class RightClickUIButton : MonoBehaviour, IPointerClickHandler
         if(prefabIndex != -1)
         {
             //Need to change direction to random direction.
-            Vector3 direction = direction = Random.insideUnitCircle.normalized;
+            Vector3 direction = Random.insideUnitCircle.normalized;
             //Instantiate the GameObject.
             GameObject lootDrop = Instantiate(listOfPrefabs[prefabIndex], GameObject.Find("Player").transform.position + direction * 0.2f, Quaternion.identity);
             lootDrop.AddComponent<Rigidbody2D>();

@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 9190088552874420414}
   - component: {fileID: 3963962344191180072}
   - component: {fileID: 3573049144368481093}
+  - component: {fileID: 4451903286562554880}
   m_Layer: 6
   m_Name: Enemy_Ribs_1
   m_TagString: Fighter
@@ -209,6 +210,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 2
   pushForce: 2
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!61 &3963962344191180072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,3 +257,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4451903286562554880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622209145192467714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 5000000014000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 6339940379690800393, guid: de961fe398e0f684492f99380ac479aa, type: 3}

@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3323605392098230575}
   - component: {fileID: 2217122328928105788}
   - component: {fileID: 781360587568173574}
+  - component: {fileID: 6726586236323900348}
   m_Layer: 6
   m_Name: Enemy_Ogre_1
   m_TagString: Fighter
@@ -253,6 +254,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6726586236323900348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102365232163591653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 64000000
+  lootPrefabs:
+  - {fileID: 3520222710325380956, guid: a1b62f53f4140604bac245f22cd56b20, type: 3}
 --- !u!1 &3971080342722739389
 GameObject:
   m_ObjectHideFlags: 0

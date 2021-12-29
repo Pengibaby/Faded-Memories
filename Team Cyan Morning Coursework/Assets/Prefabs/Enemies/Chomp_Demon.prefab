@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 3013308570931822785}
   - component: {fileID: 3013308570931822790}
   - component: {fileID: 3013308570931822791}
+  - component: {fileID: 6253007710132629988}
   m_Layer: 6
   m_Name: Chomp_Demon_1
   m_TagString: Fighter
@@ -231,6 +232,25 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 4
   pushForce: 3
+  animator: {fileID: 0}
+  cooldown: 0.5
+--- !u!114 &6253007710132629988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013308570931822845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 320000001e00000014000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 6339940379690800393, guid: de961fe398e0f684492f99380ac479aa, type: 3}
+  - {fileID: 3520222710325380956, guid: a1b62f53f4140604bac245f22cd56b20, type: 3}
 --- !u!1 &3013308571962684154
 GameObject:
   m_ObjectHideFlags: 0

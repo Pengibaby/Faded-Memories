@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4745014946370911199}
   - component: {fileID: 4745014946370911200}
   - component: {fileID: 1978424541873380161}
+  - component: {fileID: 5745001674456393368}
   m_Layer: 6
   m_Name: Enemy_Hooded_Figure_2
   m_TagString: Fighter
@@ -151,6 +152,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 1
   pushForce: 3
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!61 &4745014946370911200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +199,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5745001674456393368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745014946370911202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 3c00000028000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 6339940379690800393, guid: de961fe398e0f684492f99380ac479aa, type: 3}
 --- !u!1 &4745014946460414285
 GameObject:
   m_ObjectHideFlags: 0
