@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 7782261372391172786}
   - component: {fileID: 7782261372391172785}
   - component: {fileID: 7782261372391172789}
+  - component: {fileID: 5234967941024509473}
   m_Layer: 6
   m_Name: Sludge_Monster_1
   m_TagString: Fighter
@@ -329,6 +330,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 1
   pushForce: 2
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!95 &7782261372391172789
 Animator:
   serializedVersion: 3
@@ -348,6 +351,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5234967941024509473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782261372391172799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 5000000014000000
+  lootPrefabs:
+  - {fileID: 6339940379690800393, guid: de961fe398e0f684492f99380ac479aa, type: 3}
+  - {fileID: 0}
 --- !u!1 &7782261372690901152
 GameObject:
   m_ObjectHideFlags: 0

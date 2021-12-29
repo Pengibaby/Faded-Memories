@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 9183465454528782711}
   - component: {fileID: 4435769563175120674}
   - component: {fileID: 8372321866076479458}
+  - component: {fileID: 3796682893675541960}
   m_Layer: 6
   m_Name: Enemy_Demon_Skull_1
   m_TagString: Fighter
@@ -209,6 +210,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 1
   pushForce: 2.5
+  animator: {fileID: 0}
+  cooldown: 0.5
 --- !u!61 &4435769563175120674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,3 +257,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3796682893675541960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491695512510378713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 4100000023000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 3520222710325380956, guid: a1b62f53f4140604bac245f22cd56b20, type: 3}
