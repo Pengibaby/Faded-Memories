@@ -368,6 +368,24 @@ MonoBehaviour:
     volume: 0.3
     pitch: 1
     loop: 0
+  - soundClip: {fileID: 8300000, guid: 52da9e7583f2ac742af144ea86f89b68, type: 3}
+    source: {fileID: 0}
+    nameOfSound: ItemDrop
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - soundClip: {fileID: 8300000, guid: 73fadfe85a353cd47ac042fa7698d178, type: 3}
+    source: {fileID: 0}
+    nameOfSound: SwordEquip
+    volume: 0.3
+    pitch: 1
+    loop: 0
+  - soundClip: {fileID: 8300000, guid: cd86fe85e5daef542b06826e0ba96301, type: 3}
+    source: {fileID: 0}
+    nameOfSound: DrinkPotion
+    volume: 0.3
+    pitch: 1
+    loop: 0
   currentTheme: 
   currentAmbientSound: 
 --- !u!1 &193242242

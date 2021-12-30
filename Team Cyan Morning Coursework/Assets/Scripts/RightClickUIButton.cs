@@ -46,7 +46,7 @@ public class RightClickUIButton : MonoBehaviour, IPointerClickHandler
                     //Drop the item.
                     bool successful = DropItem(item);
                     //Plays the item consumption sound if item used successfully.
-                    //FindObjectOfType<SoundManager>().Play("ItemConsumption");
+                    FindObjectOfType<SoundManager>().Play("ItemDrop");
                     Debug.Log("Right Clicked: " + index + ", " + item.lootType);
                 }
             }
