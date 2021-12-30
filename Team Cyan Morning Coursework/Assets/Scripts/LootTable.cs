@@ -11,23 +11,23 @@ public class LootTable : MonoBehaviour
     private int randomNumber; //Random number.
 
     private Vector3 deathPosition; //Death position of the enemy.
-    
-    //When the game object is destroyed, drop an item.
-    public void OnDestroy()
-    {
-        //Gets the death position of the enemy.
-        deathPosition = gameObject.transform.position;
-        //Calls DropItem Function.
-        DropItem();
-    }
 
     //Function to drop an item.
     public void DropItem()
     {
+        //Gets the death position of the enemy.
+        deathPosition = gameObject.transform.position;
+
         //Gets the total weight/drop chances.
-        for(int i = 0; i < lootTable.Length; i++)
+        for (int i = 0; i < lootTable.Length; i++)
         {
             total += lootTable[i];
+        }
+
+        //If total weight is larger than 100, set it to 100.
+        if(total > 100)
+        {
+            total = 100;
         }
 
         //Gets a random number between 0 (inclusive) and total (exclusive)
@@ -53,8 +53,12 @@ public class LootTable : MonoBehaviour
 
                     Destroy(lootDrop.GetComponent<Rigidbody2D>(), 0.5f);
                 }
-                //Break the loop.
-                break;
+                //If the weight 100, then check the next one. otherwise, break the loop.
+                if (lootTable[i] != 100)
+                {
+                    //Break the loop.
+                    break;
+                }
             }
             //If the number is larger, do the following.
             else

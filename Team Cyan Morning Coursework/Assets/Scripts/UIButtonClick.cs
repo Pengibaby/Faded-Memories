@@ -76,7 +76,18 @@ public class UIButtonClick : MonoBehaviour
                 else 
                 {
                     //Plays the item consumption sound if item used successfully.
-                    FindObjectOfType<SoundManager>().Play("ItemConsumption");
+                    if (item.lootType == Item.ItemType.Apple || item.lootType == Item.ItemType.Berry)
+                    {
+                        FindObjectOfType<SoundManager>().Play("ItemConsumption");
+                    }
+                    else if (item.lootType == Item.ItemType.ManaPotion1 || item.lootType == Item.ItemType.ManaPotion2)
+                    {
+                        FindObjectOfType<SoundManager>().Play("DrinkPotion");
+                    }
+                    else
+                    {
+                        FindObjectOfType<SoundManager>().Play("SwordEquip");
+                    }
                 }
             }
 

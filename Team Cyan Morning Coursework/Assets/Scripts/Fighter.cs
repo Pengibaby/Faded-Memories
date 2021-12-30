@@ -29,6 +29,15 @@ public class Fighter : MonoBehaviour
 			if (hitpoint <= 0)
 			{
 				hitpoint = 0;
+				if(gameObject.name != "Player")
+                {
+					//Checks to make sure the lootTable exists.
+					if (gameObject.GetComponent<LootTable>() != null)
+					{
+						//Make enemy drop loot.
+						gameObject.GetComponent<LootTable>().DropItem();
+					}
+                }
 				Death();
 			}
 
