@@ -73262,6 +73262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7630a678f97d8d048809b4e1ac8574be, type: 3}
+--- !u!1 &1230502542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055204684384772329, guid: 7630a678f97d8d048809b4e1ac8574be, type: 3}
+  m_PrefabInstance: {fileID: 1230502541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1237944515
 GameObject:
   m_ObjectHideFlags: 0
@@ -89551,6 +89556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2511841030971833371, guid: dce8d4b5b83e63349949c4c64f86902a, type: 3}
+      propertyPath: spellCircle
+      value: 
+      objectReference: {fileID: 1230502542}
     - target: {fileID: 3794582704645398066, guid: dce8d4b5b83e63349949c4c64f86902a, type: 3}
       propertyPath: testDialogue
       value: 
