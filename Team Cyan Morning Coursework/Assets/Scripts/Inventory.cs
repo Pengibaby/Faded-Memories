@@ -107,13 +107,14 @@ public class Inventory
                 //Find the current player equip weapon.
                 GameObject playerWeapon = GameObject.Find("Player_Knife");
                 //Saves the current weapon from the inventory in a new loot item.
-                temptemp = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
+                temptemp = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, cooldown = temp.cooldown, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
                 //Set the weapon item in the inventory to be the player equiped weapon info.
                 listOfItems[index].sprite = playerWeapon.GetComponent<SpriteRenderer>().sprite;
                 listOfItems[index].lootType = Item.ItemType.Weapons;
                 listOfItems[index].lootAmount = 1;
                 listOfItems[index].dmg = playerWeapon.GetComponent<Weapon>().damagePoint;
                 listOfItems[index].push = playerWeapon.GetComponent<Weapon>().pushForce;
+                listOfItems[index].cooldown = playerWeapon.GetComponent<Weapon>().GetCooldown();
                 listOfItems[index].colliderOffset = playerWeapon.GetComponent<BoxCollider2D>().offset;
                 listOfItems[index].colliderSize = playerWeapon.GetComponent<BoxCollider2D>().size;
             }
@@ -178,7 +179,7 @@ public class Inventory
         //If loot is a weapon.
         else
         {
-            duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
+            duplicateItem = new Loot { sprite = temp.sprite, lootType = temp.lootType, lootAmount = temp.lootAmount, dmg = temp.dmg, push = temp.push, cooldown = temp.cooldown, colliderOffset = temp.colliderOffset, colliderSize = temp.colliderSize };
         }
         //Returns the dropped item (duplicated from the actual removed item.
         return duplicateItem;

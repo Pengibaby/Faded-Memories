@@ -27,6 +27,8 @@ public class Item : Collectable
     [HideInInspector]
     public float pushforce;
     [HideInInspector]
+    public float weaponCooldown;
+    [HideInInspector]
     public Vector2 boxColliderOffset;
     [HideInInspector]
     public Vector2 boxColliderSize;
@@ -52,10 +54,11 @@ public class Item : Collectable
                 //Get weapon info from the item colliding with the player.
                 weaponDmg = this.GetComponent<Weapon>().damagePoint;
                 pushforce = this.GetComponent<Weapon>().pushForce;
+                weaponCooldown = this.GetComponent<Weapon>().GetCooldown();
                 boxColliderOffset = this.GetComponent<BoxCollider2D>().offset;
                 boxColliderSize = this.GetComponent<BoxCollider2D>().size;
                 //Creates a loot object that stores the information of itemSprite, itemType, amount, dmg, push force, collider offset and collider size.
-                tempLoot = new Loot { sprite = itemSprite, lootType = itemType, lootAmount = amount, dmg = weaponDmg, push = pushforce, colliderOffset = boxColliderOffset, colliderSize = boxColliderSize};
+                tempLoot = new Loot { sprite = itemSprite, lootType = itemType, lootAmount = amount, dmg = weaponDmg, push = pushforce, cooldown = weaponCooldown, colliderOffset = boxColliderOffset, colliderSize = boxColliderSize};
             }
             //Adds the loot to the player inventory. And stores a bool to check if add is sucessful.
             bool addSuccessful = GameObject.Find("Player").GetComponent<Player>().playerInventory.AddItem(tempLoot);

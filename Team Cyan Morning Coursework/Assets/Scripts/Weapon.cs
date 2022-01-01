@@ -14,9 +14,13 @@ public class Weapon : Collidable
 	private SpriteRenderer spriteRenderer;
 
 	//Swing
+	[SerializeField]
 	private float cooldown = 0.5f;
 	private float lastSwing;
 	public Animator animator;
+
+	//Bool to check if the swing was successful.
+	private bool mouseButtonDown = false;
 
 	//A vector3 to store the current orientation of the player. Default to be no direction.
 	private Vector3 playerOrientation = new Vector3(0, 0, 0);
@@ -53,6 +57,7 @@ public class Weapon : Collidable
 			//Swing the weapon.
 			if (Time.time - lastSwing > cooldown)
 			{
+				mouseButtonDown = true;
 				lastSwing = Time.time;
 				Swing();
 			}
@@ -61,10 +66,14 @@ public class Weapon : Collidable
 		//If the mouse button is released and if the mouse is not over the UI.
 		if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
 		{
-			lastSwing = Time.time;
-			Swing();
-			//Plays the audio for sword swing.
-			FindObjectOfType<SoundManager>().Play("SwordSwing");
+			if (mouseButtonDown == true)
+			{
+				lastSwing = Time.time;
+				Swing();
+				//Plays the audio for sword swing.
+				FindObjectOfType<SoundManager>().Play("SwordSwing");
+				mouseButtonDown = false;
+			}
 		}
 	}
 
@@ -120,4 +129,14 @@ public class Weapon : Collidable
 		//Activate the trigger to play the swing animation.
 		animator.SetTrigger("PlayerSwing");
 	}
+
+	public float GetCooldown()
+    {
+		return cooldown;
+    }
+
+	public void SetCooldown(float value)
+    {
+		cooldown = value;
+    }
 }

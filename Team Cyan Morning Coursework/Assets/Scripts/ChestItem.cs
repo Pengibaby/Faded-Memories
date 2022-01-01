@@ -33,7 +33,7 @@ public class ChestItem : Collectable
             else
             {
                 //Creates a loot object that stores the information of itemSprite, itemType and amount.
-                tempLoot = new Loot { sprite = itemSprite, lootType = item.itemType, lootAmount = item.amount, dmg = item.weaponDmg, push = item.pushforce, colliderOffset = item.boxColliderOffset, colliderSize = item.boxColliderSize };
+                tempLoot = new Loot { sprite = itemSprite, lootType = item.itemType, lootAmount = item.amount, dmg = item.weaponDmg, push = item.pushforce, cooldown = item.weaponCooldown, colliderOffset = item.boxColliderOffset, colliderSize = item.boxColliderSize };
             }
 
             bool addSuccessful = GameObject.Find("Player").GetComponent<Player>().playerInventory.AddItem(tempLoot);

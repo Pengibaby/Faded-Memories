@@ -21,6 +21,7 @@ public class Loot
     //Weapon loot.
     public int dmg;
     public float push;
+    public float cooldown;
     public Vector2 colliderOffset;
     public Vector2 colliderSize;
 
