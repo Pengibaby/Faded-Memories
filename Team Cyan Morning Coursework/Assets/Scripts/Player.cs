@@ -75,6 +75,7 @@ public class Player : Mover
                 playerWeapon.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.currentWeapon.sprite;
                 playerWeapon.GetComponent<Weapon>().damagePoint = GameManager.Instance.currentWeapon.dmg;
                 playerWeapon.GetComponent<Weapon>().pushForce = GameManager.Instance.currentWeapon.push;
+                playerWeapon.GetComponent<Weapon>().SetCooldown(GameManager.Instance.currentWeapon.cooldown);
                 playerWeapon.GetComponent<BoxCollider2D>().offset = GameManager.Instance.currentWeapon.colliderOffset;
                 playerWeapon.GetComponent<BoxCollider2D>().size = GameManager.Instance.currentWeapon.colliderSize;
             }

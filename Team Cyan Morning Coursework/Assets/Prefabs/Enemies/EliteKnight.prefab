@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4311960852207231783}
   - component: {fileID: 4311960852207231782}
   - component: {fileID: 4311960852207231781}
+  - component: {fileID: 2955369317911854939}
   m_Layer: 6
   m_Name: EliteKnight_Walk_1
   m_TagString: Fighter
@@ -205,6 +206,23 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!114 &2955369317911854939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311960852207231803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 320000002d00000005000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 3520222710325380956, guid: a1b62f53f4140604bac245f22cd56b20, type: 3}
+  - {fileID: 8660077325595484727, guid: 2e2ccc97015785a43bb70f2e52add6b1, type: 3}
 --- !u!1 &4311960852345402282
 GameObject:
   m_ObjectHideFlags: 0
