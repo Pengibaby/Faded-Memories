@@ -4010,6 +4010,7 @@ MonoBehaviour:
   - {fileID: 4417074605508463474, guid: 7f93202f06bf27a46b76194d01bf90eb, type: 3}
   - {fileID: 2048740691490004334, guid: 48ee23600e1a10c42b4ef68438ab2fa4, type: 3}
   - {fileID: 8660077325595484727, guid: 2e2ccc97015785a43bb70f2e52add6b1, type: 3}
+  - {fileID: 2461076469436285462, guid: cfd4d89914cac694eb11c0ce0c053e35, type: 3}
 --- !u!1 &5804091564808179804
 GameObject:
   m_ObjectHideFlags: 0

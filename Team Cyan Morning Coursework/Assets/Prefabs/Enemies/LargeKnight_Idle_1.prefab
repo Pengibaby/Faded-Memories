@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1725447467030886303}
   - component: {fileID: 1725447467030886302}
   - component: {fileID: 1725447467030886301}
+  - component: {fileID: 3867754131419372774}
   m_Layer: 6
   m_Name: LargeKnight_Idle_1
   m_TagString: Fighter
@@ -469,3 +470,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3867754131419372774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725447467030886300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e78f6e571691224cbbca7b2c855b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: 280000002300000019000000
+  lootPrefabs:
+  - {fileID: 0}
+  - {fileID: 6339940379690800393, guid: de961fe398e0f684492f99380ac479aa, type: 3}
+  - {fileID: 2461076469436285462, guid: cfd4d89914cac694eb11c0ce0c053e35, type: 3}
