@@ -33,6 +33,13 @@ public class Item : Collectable
     [HideInInspector]
     public Vector2 boxColliderSize;
 
+    //When the item is spawned in to the scene for the first time.
+    private void Awake()
+    {
+        //Disable the ability for the player to collect items for a bit of time.
+        StartCoroutine(DisableAbilityToCollectForSeconds(0.5f));
+    }
+
     //Overrides the OnCollect function from Collectables class.
     protected override void OnCollect() {
         if (!collected)
@@ -78,5 +85,13 @@ public class Item : Collectable
                 collected = false;
             }
         }
+    }
+
+    //A function that sets "collected" to be true for "seconds", so that the player is unable to collect the item for that many seconds.
+    private IEnumerator DisableAbilityToCollectForSeconds(float seconds)
+    {
+        collected = true;
+        yield return new WaitForSeconds(seconds);
+        collected = false;
     }
 }

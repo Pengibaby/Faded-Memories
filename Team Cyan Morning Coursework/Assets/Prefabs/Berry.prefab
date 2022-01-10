@@ -114,6 +114,7 @@ MonoBehaviour:
   amount: 1
   weaponDmg: 0
   pushforce: 0
+  weaponCooldown: 0
   boxColliderOffset: {x: 0, y: 0}
   boxColliderSize: {x: 0, y: 0}
 --- !u!61 &8382206345044914534
